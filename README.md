@@ -1,9 +1,10 @@
 # DND Bot
-> A discord bot for dungeons and dragons
 
 ![Code Style](https://img.shields.io/badge/Code%20Style-Prettier-blue?style=flat-square)
 ![License](https://img.shields.io/github/license/Averyyyyyyyy/dnd-bot?style=flat-square)
 ![Last Commit](https://img.shields.io/github/last-commit/Averyyyyyyyy/dnd-bot?style=flat-square)
+
+> A discord bot for dungeons and dragons
 
 ## Running
 - This project requires [pnpm](https://pnpm.io/) as an alternative to npm for package managing
