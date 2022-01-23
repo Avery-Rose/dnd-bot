@@ -5,7 +5,7 @@ declare module "discord.js" {
   export interface Client {
     commands: Collection<string, Command>;
     subcommands: Collection<string, Subcommand>;
-    interactions: Collection<string, (interaction: Interaction) => void>;
+    interactions: Collection<string, InteractionEvent>;
   }
 
   export interface Command {
@@ -22,5 +22,15 @@ declare module "discord.js" {
   export interface Event {
     name: string;
     run(client: Client, ...args: any[]): Promise<void>;
+  }
+
+  export interface ButtonInteractionEvent {
+    execute: (client: Client, interaction: ButtonInteraction) => Promise<void>;
+    validator: (interaction: ButtonInteraction) => boolean;
+  }
+
+  export interface SelectMenuInteractionEvent {
+    execute: (client: Client, interaction: SelectMenuInteraction) => Promise<void>;
+    validator: (interaction: SelectMenuInteraction) => boolean;
   }
 }

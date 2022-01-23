@@ -15,7 +15,7 @@ specifiers:
   eslint: ^8.6.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
-  generate-env-types: git+https://github.com/ryanArora/generate-env-types.git#1.0.1
+  generate-env-types: git+https://github.com/ryanArora/generate-env-types.git#1.0.2
   husky: ^7.0.4
   lint-staged: ^12.1.7
   mongoose: ^6.1.7
@@ -44,7 +44,7 @@ devDependencies:
   eslint: 8.6.0
   eslint-config-prettier: 8.3.0_eslint@8.6.0
   eslint-plugin-prettier: 4.0.0_1c588f61426b1faf18812943f1678311
-  generate-env-types: github.com/ryanArora/generate-env-types/209b4b223c881313611260eba973609d3f078f3b
+  generate-env-types: github.com/ryanArora/generate-env-types/a4047238f4b1dec5e8fc1e1220d2f7a9279ab3a3
   husky: 7.0.4
   lint-staged: 12.1.7
   prettier: 2.5.1
@@ -2700,8 +2700,8 @@ packages:
     resolution: {integrity: sha512-daZ80A81I3/9lIydI44motWe6n59kRBfNzTuS2bfzVh1nAXi667TOTWWtatxyG+fwgNUiagSj/CWZwRRbevJIg==}
     dev: false
 
-  github.com/ryanArora/generate-env-types/209b4b223c881313611260eba973609d3f078f3b:
-    resolution: {tarball: https://codeload.github.com/ryanArora/generate-env-types/tar.gz/209b4b223c881313611260eba973609d3f078f3b}
+  github.com/ryanArora/generate-env-types/a4047238f4b1dec5e8fc1e1220d2f7a9279ab3a3:
+    resolution: {tarball: https://codeload.github.com/ryanArora/generate-env-types/tar.gz/a4047238f4b1dec5e8fc1e1220d2f7a9279ab3a3}
     name: generate-env-types
     version: 1.0.1
     hasBin: true
