@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 
-import { Client, Interaction } from "discord.js";
+import { Client, Interaction, ButtonInteractionEvent, SelectMenuInteraction } from "discord.js";
 import logger from "../util/logger";
 
 export default async function registerInteractions(client: Client, interactionsDir: string) {
@@ -21,7 +21,7 @@ export default async function registerInteractions(client: Client, interactionsD
       if (!stats.isFile()) continue;
 
       // eslint-disable-next-line @typescript-eslint/no-var-requires
-      const interaction: (interaction: Interaction) => void = require(filePath)?.default;
+      const interaction: SelectMenuInteraction | ButtonInteractionEvent = require(filePath)?.default;
       logger.info(`Registering interaction: ${fileName}`);
 
       client.interactions.set(fileName.toLowerCase(), interaction);
