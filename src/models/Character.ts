@@ -14,7 +14,7 @@ export interface ICharacter extends Document {
 }
 
 const CharacterSchema = new Schema({
-  ownerId: { type: String, required: true, unique: true },
+  ownerId: { type: String, required: true },
   avatarUrl: { type: String, required: true },
   name: { type: String, required: true },
   stats: {
