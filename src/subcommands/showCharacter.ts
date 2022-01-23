@@ -27,7 +27,7 @@ async function execute(client: Client, interaction: CommandInteraction) {
 
 const SelectCharacterCommand: Subcommand = {
   parent: "character",
-  data: new SlashCommandBuilder().setName("select").setDescription("Select a character"),
+  data: new SlashCommandBuilder().setName("info").setDescription("Replies with your character info."),
   execute,
 };
 
