@@ -3,9 +3,6 @@ dotenv.config();
 
 import chalk from "chalk";
 
-process.env["NODE_ENV"];
-const isProd = process.env["NODE_ENV"] === "production";
-
 const logger = {
   info: (...args: unknown[]) => {
     console.info(chalk.blue(`[INFO]`), ...args);
