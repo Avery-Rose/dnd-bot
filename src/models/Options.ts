@@ -1,4 +1,4 @@
-import { Schema, model, Document } from "mongoose";
+import { Schema, model, Document, ObjectId } from "mongoose";
 import { Snowflake } from "discord.js";
 
 interface ICharacter {
@@ -16,12 +16,12 @@ interface ICharacter {
 
 interface IWorld {
   id: string;
-  characters: ICharacter[];
+  characters: ObjectId[];
 }
 
-export interface ISettings extends Document {
+export interface IOptions extends Document {
   id: Snowflake;
-  worlds: IWorld[];
+  worlds: ObjectId[];
 }
 
 const SettingsSchema = new Schema({
@@ -29,4 +29,4 @@ const SettingsSchema = new Schema({
   worlds: { type: [] },
 });
 
-export default model<ISettings>("settings", SettingsSchema);
+export default model<IOptions>("options", SettingsSchema);
