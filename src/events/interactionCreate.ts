@@ -3,7 +3,7 @@ import logger from "../util/logger";
 
 async function interactionCreate(client: Client, interaction: Interaction) {
   if (!interaction) return;
-  const memberTag = `${interaction.member?.user.username}#${interaction.member?.user.discriminator}`;
+  const memberTag = interaction.user.tag;
   if (interaction.isButton() || interaction.isSelectMenu()) {
     const interactionEvent = client.interactions.find((i) => i.validator(interaction));
     if (interactionEvent) {
