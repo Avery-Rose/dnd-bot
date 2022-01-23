@@ -2,6 +2,7 @@
   "name": "node-typescript-template",
   "private": true,
   "main": "./src/index.ts",
+  "license": "GPL-3.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
