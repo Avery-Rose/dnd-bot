@@ -1,4 +1,9 @@
 # DND Bot
+![Code Style](https://img.shields.io/badge/Code%20Style-Prettier-blue?style=for-the-badge)
+
+![License](https://img.shields.io/github/license/averyyyyyyyy/dnd-bot?style=for-the-badge)
+
+![Last Commit](https://img.shields.io/github/last-commit/averyyyyyyyy/dnd-bot?style=for-the-badge)
 > A discord bot for dungeons and dragons
 
 ## Running
