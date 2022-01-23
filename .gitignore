@@ -1,0 +1,19 @@
+# Lockfiles for unused managers
+package-lock.json
+yarn.lock
+
+# Output
+/build
+/dist
+
+# Dependencies
+/node_modules
+
+# Environment variables
+.env
+
+# Logs
+.pnpm-debug.log
+
+# Generated files
+./src/typings/env.d.ts
