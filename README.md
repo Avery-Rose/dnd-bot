@@ -7,4 +7,4 @@
 
 ## Contributing 
 - To contribute please fork this repository and create a pull request with your changes 
-- This project uses [commitlint]("https://github.com/conventional-changelog/commitlint) meaning you must follow [conventional commits]("https://www.conventionalcommits.org) in order to create a commit
+- This project uses [commitlint](https://github.com/conventional-changelog/commitlint) meaning you must follow [conventional commits](https://www.conventionalcommits.org) in order to create a commit
