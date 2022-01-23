@@ -1,8 +1,8 @@
 # DND Bot
 
-![Code Style](https://img.shields.io/badge/Code%20Style-Prettier-blue?style=flat-square)
-![License](https://img.shields.io/github/license/Averyyyyyyyy/dnd-bot?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/Averyyyyyyyy/dnd-bot?style=flat-square)
+[![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![License](https://img.shields.io/github/license/Averyyyyyyyy/dnd-bot?style=flat-square)](https://github.com/Averyyyyyyyy/dnd-bot/blob/main/LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/Averyyyyyyyy/dnd-bot?style=flat-square)](https://github.com/Averyyyyyyyy/dnd-bot/graphs/contributors)
 
 > A discord bot for dungeons and dragons
 
