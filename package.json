@@ -8,6 +8,7 @@
     "build": "pnpm genv && tsc",
     "watch": "pnpm genv && tsc-watch --onSuccess \"node ./build/index.js\"",
     "genv": "generate-env-types --definitionPath=\"./src/typings/env.d.ts\" --examplePath=\"\"",
+    "gexample": "generate-env-types --definitionPath=\"\"",
     "lint": "eslint --fix . && prettier ./**/**.{json,md} --write"
   },
   "dependencies": {
