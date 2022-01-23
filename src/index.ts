@@ -16,9 +16,7 @@ client.interactions = new Collection();
 client.subcommands = new Collection();
 
 const setup = async () => {
-  await connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}/${process.env.MONGO_DB}?retryWrites=true&w=majority`
-  ).then(() => {
+  await connect(process.env.MONGO_URI).then(() => {
     logger.info(`Connected to MongoDB`);
   });
   logger.divide();
