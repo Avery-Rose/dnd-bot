@@ -1,4 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import chalk from "chalk";
+
+process.env["NODE_ENV"];
+const isProd = process.env["NODE_ENV"] === "production";
 
 const logger = {
   info: (...args: unknown[]) => {
@@ -11,6 +17,7 @@ const logger = {
     console.error(chalk.red(`[ERROR]`), ...args);
   },
   debug: (...args: unknown[]) => {
+    if (process.env["DEBUG"].toLowerCase() !== "true") return;
     console.debug(chalk.magenta(`[DEBUG]`), ...args);
   },
   divide: () => {
