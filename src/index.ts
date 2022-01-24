@@ -22,13 +22,6 @@ client.interactions = new Collection();
 client.subcommands = new Collection();
 
 const setup = async () => {
-  await connect(process.env.MONGO_URI).then(() => {
-    logger.info(`Connected to MongoDB`);
-    //Options.find().then(logger.debug);
-    //World.find().then(logger.debug);
-    //Character.find().then(logger.debug);
-    //User.find().then(logger.debug);
-  });
   logger.divide();
   await registerEvents(client, path.join(__dirname, "events"));
   logger.divide();
@@ -38,6 +31,13 @@ const setup = async () => {
   logger.divide();
   await registerInteractions(client, path.join(__dirname, "interactions"));
   logger.divide();
+  await connect(process.env.MONGO_URI).then(() => {
+    logger.info(`Connected to MongoDB`);
+    //Options.find().then(logger.debug);
+    //World.find().then(logger.debug);
+    //Character.find().then(logger.debug);
+    //User.find().then(logger.debug);
+  });
   await client.login(process.env.DISCORD_TOKEN);
 };
 
