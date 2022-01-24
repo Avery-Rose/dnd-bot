@@ -4,8 +4,8 @@ import { SlashCommandBuilder } from "@discordjs/builders";
 import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v9";
 import logger from "../../util/logger";
-const clientId = process.env["CLIENT_ID"],
-  guildId = process.env["GUILD_ID"],
+const clientId = process.env["DISCORD_CLIENT_ID"],
+  guildId = process.env["DISCORD_GUILD_ID"],
   token = process.env["DISCORD_TOKEN"];
 
 if (!clientId || !guildId || !token) {
