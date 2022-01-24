@@ -1,5 +1,7 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
 import { Client, CommandInteraction, Subcommand } from "discord.js";
+import logger from "../util/logger";
+import World from "../models/World";
 
 import characterInfoEmbed from "../embeds/characterInfo";
 
@@ -10,7 +12,7 @@ async function execute(client: Client, interaction: CommandInteraction) {
 
   // TODO: get the world from the database
 
-  // const world = await getWorld(guildId);
+  logger.debug(World.find({ guildId }));
 
   const id = interaction.user.id;
 

@@ -34,7 +34,15 @@ const commands = [
     .setName("world")
     .setDescription("Replies with world info!")
     .addSubcommand((subcommand) => subcommand.setName("info").setDescription("Replies with world info!"))
-    .addSubcommand((subcommand) => subcommand.setName("create").setDescription("Create a world!"))
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("create")
+        .setDescription("Create a world!")
+        .addStringOption((option) => option.setName("name").setDescription("The name of the world").setRequired(true))
+        .addStringOption((option) =>
+          option.setName("description").setDescription("The description of the world").setRequired(true)
+        )
+    )
     .addSubcommand((subcommand) => subcommand.setName("delete").setDescription("Deletes a world!"))
     .addSubcommand((subcommand) => subcommand.setName("edit").setDescription("Edit current world!"))
     .addSubcommand((subcommand) => subcommand.setName("select").setDescription("Select a world!")),

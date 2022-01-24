@@ -10,6 +10,12 @@ import registerCommands from "./util/registerCommands";
 import registerInteractions from "./util/registerInteractions";
 import registerSubcommands from "./util/registerSubcommands";
 
+// MODELS
+import Options from "./models/Options";
+import World from "./models/World";
+import Character from "./models/Character";
+import User from "./models/User";
+
 const client = new Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 client.commands = new Collection();
 client.interactions = new Collection();
@@ -18,6 +24,10 @@ client.subcommands = new Collection();
 const setup = async () => {
   await connect(process.env.MONGO_URI).then(() => {
     logger.info(`Connected to MongoDB`);
+    //Options.find().then(logger.debug);
+    //World.find().then(logger.debug);
+    //Character.find().then(logger.debug);
+    //User.find().then(logger.debug);
   });
   logger.divide();
   await registerEvents(client, path.join(__dirname, "events"));
