@@ -25,6 +25,7 @@ const logger = {
   table: (...args: unknown[]) => {
     console.table(...args);
   },
+  // Use this for anything that comes straight from discord (e.g. warn: Event, error: Event, etc.)
   discord: {
     debug: (...args: unknown[]) => {
       if (process.env["DISCORD_DEBUG"].toLowerCase() !== "true") return;
