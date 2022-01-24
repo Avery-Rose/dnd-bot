@@ -3,9 +3,7 @@ import { Client, Event } from "discord.js";
 import logger from "../util/logger";
 
 async function warn(client: Client, info: string) {
-  if (process.env["DISCORD_DEBUG"].toLowerCase() !== "true") return;
-
-  logger.warn(`DISCORD API: ${info}`);
+  logger.discord.warn(info);
 }
 
 const WarnEvent: Event = {
