@@ -3,7 +3,7 @@ import { Client, Event } from "discord.js";
 import logger from "../util/logger";
 
 async function debug(client: Client, info: string) {
-  if (process.env["LOGGER_DEBUG"].toLowerCase() !== "true") return;
+  if (process.env["DISCORD_DEBUG"].toLowerCase() !== "true") return;
 
   logger.debug(`DISCORD API: ${info}`);
 }
