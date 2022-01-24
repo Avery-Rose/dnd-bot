@@ -1,4 +1,5 @@
 import { Client, CommandInteraction } from "discord.js";
+import logger from "./logger";
 
 export default async function executeSubcommand(client: Client, interaction: CommandInteraction) {
   if (!interaction.isCommand()) return;
@@ -10,6 +11,7 @@ export default async function executeSubcommand(client: Client, interaction: Com
   }
 
   const subcommand = client.subcommands.get(subcommandName);
+  logger.debug(subcommand);
   if (!subcommand) {
     interaction.reply({
       content: `Failed to find sub command: \`\`${subcommandName}\`\``,

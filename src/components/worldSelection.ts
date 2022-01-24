@@ -1,20 +1,28 @@
-import { MessageActionRow, MessageSelectMenu } from "discord.js";
+import { Guild, MessageActionRow, MessageSelectMenu } from "discord.js";
+import logger from "../util/logger";
 
-// TODO: Use Database to show world based on guild id
-export default new MessageActionRow().addComponents(
-  new MessageSelectMenu()
-    .setCustomId("worldSelection")
-    .setPlaceholder("Nothing selected")
-    .addOptions([
-      {
-        label: "first option",
-        description: "This is a description",
-        value: "first_option",
-      },
-      {
-        label: "second option",
-        description: "This is also a description",
-        value: "second_option",
-      },
-    ])
-);
+import World from "../models/World";
+import Options from "../models/Options";
+
+const worldSelection = async (guild: Guild): Promise<MessageActionRow> => {
+  const guildDocument = await Options.findOne({ guildId: guild.id });
+  //logger.debug(guildDocument);
+  const worlds = await World.find({ guildId: guild.id });
+  //logger.debug(worlds);
+
+  const options = [];
+
+  for (const world of worlds) {
+    options.push({
+      label: world.name,
+      description: world.description,
+      value: world.name,
+    });
+  }
+
+  return new MessageActionRow().addComponents(
+    new MessageSelectMenu().setCustomId("worldSelection").setPlaceholder("Nothing selected").addOptions(options)
+  );
+};
+
+export default worldSelection;
