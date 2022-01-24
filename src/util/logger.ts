@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+
 import chalk from "chalk";
 
 const logger = {
@@ -11,6 +13,7 @@ const logger = {
     console.error(chalk.red(`[ERROR]`), ...args);
   },
   debug: (...args: unknown[]) => {
+    if (process.env["DEBUG"].toLowerCase() !== "true") return;
     console.debug(chalk.magenta(`[DEBUG]`), ...args);
   },
   divide: () => {
