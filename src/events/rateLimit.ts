@@ -4,14 +4,14 @@ import logger from "../util/logger";
 async function rateLimit(client: Client, rateLimitData: RateLimitData) {
   const data = rateLimitData;
   logger.divide();
-  logger.info(`Rate limit info:`);
+  logger.discord.warn(`Rate limit info:`);
   logger.divide();
-  logger.warn(`Timeout: ${data.timeout / 1000}s`);
-  logger.warn(`Limit: ${data.limit}`);
-  logger.warn(`Method: ${data.method}`);
-  logger.warn(`Path: ${data.path}`);
-  logger.warn(`Route: ${data.route}`);
-  logger.warn(`Global: ${data.global}`);
+  logger.discord.warn(`Timeout: ${data.timeout / 1000}s`);
+  logger.discord.warn(`Limit: ${data.limit}`);
+  logger.discord.warn(`Method: ${data.method}`);
+  logger.discord.warn(`Path: ${data.path}`);
+  logger.discord.warn(`Route: ${data.route}`);
+  logger.discord.warn(`Global: ${data.global}`);
   logger.divide();
 }
 

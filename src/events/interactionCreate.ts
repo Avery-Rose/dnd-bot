@@ -13,8 +13,9 @@ async function interactionCreate(client: Client, interaction: Interaction) {
   } else if (interaction.isCommand()) {
     const command = client.commands.get(interaction.commandName);
     if (!command) return;
+    //logger.debug(command);
     command.execute(client, interaction);
-    //logger.debug(`Command `, interaction);
+    logger.debug(`Command `, interaction.type);
     const subcommand = interaction.options.getSubcommand(false);
     logger.debug(`Command: ${interaction.commandName}${subcommand ? `/${subcommand}` : ""} executed by ${memberTag}`);
   }

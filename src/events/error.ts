@@ -2,7 +2,7 @@ import { Client, Event } from "discord.js";
 import logger from "../util/logger";
 
 async function error(client: Client, error: Error) {
-  logger.error(error);
+  logger.discord.error(error);
 }
 
 const ErrorEvent: Event = {

@@ -4,8 +4,8 @@ import { SlashCommandBuilder } from "@discordjs/builders";
 import { REST } from "@discordjs/rest";
 import { Routes } from "discord-api-types/v9";
 import logger from "../../util/logger";
-const clientId = process.env["CLIENT_ID"],
-  guildId = process.env["GUILD_ID"],
+const clientId = process.env["DISCORD_CLIENT_ID"],
+  guildId = process.env["DISCORD_GUILD_ID"],
   token = process.env["DISCORD_TOKEN"];
 
 if (!clientId || !guildId || !token) {
@@ -34,7 +34,15 @@ const commands = [
     .setName("world")
     .setDescription("Replies with world info!")
     .addSubcommand((subcommand) => subcommand.setName("info").setDescription("Replies with world info!"))
-    .addSubcommand((subcommand) => subcommand.setName("create").setDescription("Create a world!"))
+    .addSubcommand((subcommand) =>
+      subcommand
+        .setName("create")
+        .setDescription("Create a world!")
+        .addStringOption((option) => option.setName("name").setDescription("The name of the world").setRequired(true))
+        .addStringOption((option) =>
+          option.setName("description").setDescription("The description of the world").setRequired(true)
+        )
+    )
     .addSubcommand((subcommand) => subcommand.setName("delete").setDescription("Deletes a world!"))
     .addSubcommand((subcommand) => subcommand.setName("edit").setDescription("Edit current world!"))
     .addSubcommand((subcommand) => subcommand.setName("select").setDescription("Select a world!")),

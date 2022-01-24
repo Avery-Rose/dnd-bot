@@ -13,7 +13,7 @@ const logger = {
     console.error(chalk.red(`[ERROR]`), ...args);
   },
   debug: (...args: unknown[]) => {
-    if (process.env["DEBUG"].toLowerCase() !== "true") return;
+    if (process.env["LOGGER_DEBUG"].toLowerCase() !== "true") return;
     console.debug(chalk.magenta(`[DEBUG]`), ...args);
   },
   divide: () => {
@@ -24,6 +24,20 @@ const logger = {
   },
   table: (...args: unknown[]) => {
     console.table(...args);
+  },
+  // Use this for anything that comes straight from discord (e.g. warn: Event, error: Event, etc.)
+  discord: {
+    debug: (...args: unknown[]) => {
+      if (process.env["DISCORD_DEBUG"].toLowerCase() !== "true") return;
+      console.debug(chalk.magenta(`[DISCORD DEBUG]`), ...args);
+    },
+    warn: (...args: unknown[]) => {
+      if (process.env["DISCORD_WARN"].toLowerCase() !== "true") return;
+      console.warn(chalk.yellow(`[DISCORD WARN]`), ...args);
+    },
+    error: (...args: unknown[]) => {
+      console.error(chalk.red(`[DISCORD ERROR]`), ...args);
+    },
   },
 };
 
