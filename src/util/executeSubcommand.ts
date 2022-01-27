@@ -10,7 +10,7 @@ export default async function executeSubcommand(client: Client, interaction: Com
     return;
   }
 
-  const subcommand = client.subcommands.get(subcommandName);
+  const subcommand = client.subcommands.get(`${interaction.commandName.toLowerCase()}-${subcommandName.toLowerCase()}`);
   logger.debug(subcommand);
   if (!subcommand) {
     interaction.reply({

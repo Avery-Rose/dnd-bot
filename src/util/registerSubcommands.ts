@@ -19,6 +19,6 @@ export default async function registerSubcommands(client: Client, subcommandsDir
     const subcommand: Subcommand = require(filePath)?.default;
     logger.info(`Registering subcommand: ${subcommand.data.name}`);
     // Set a new item in the Collection
-    client.subcommands.set(subcommand.data.name, subcommand);
+    client.subcommands.set(`${subcommand.parent.toLowerCase()}-${subcommand.data.name.toLowerCase()}`, subcommand);
   }
 }
